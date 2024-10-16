@@ -9,6 +9,7 @@ import HomePage from './page/HomePage';
 import Login from './page/Login';
 import Phonebook from './page/Phonebook';
 import ProductAll from './page/ProductAll';
+import RepeatPracticePage from './page/RepeatPracticePage';
 import RpsPage from './page/RpsPage';
 import WeatherAppPage from './page/WeatherAppPage';
 import PrivateRoute from './route/PrivateRoute';
@@ -40,6 +41,7 @@ function App() {
         <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate}/>}></Route>
         <Route path="/counting" element={<Counting/>}></Route>
         <Route path="/phonebook" element={<Phonebook/>}></Route>
+        <Route path="/RepeatPracticePage" element={<RepeatPracticePage/>}></Route>
       </Routes>
     </div>
   );
