@@ -12,6 +12,9 @@
 }
 
 /* [공통] - 공통 스타일 */
+.mission-content{
+  margin-bottom: 50px;
+}
 .day-section{
   padding: 2rem;
   margin-bottom: 5rem;
