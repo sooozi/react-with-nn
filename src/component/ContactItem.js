@@ -17,7 +17,6 @@ const ContactItem = ({item, index }) => {
     // 현재 인덱스를 사용하여 이미지 URL 선택
     const imageUrl = imageUrls[index % imageUrls.length];
     
-    
     return (
         <div className="cont-contact-item">
         <Row>
