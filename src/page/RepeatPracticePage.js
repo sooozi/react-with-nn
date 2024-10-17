@@ -3,20 +3,35 @@ import TeleBox01 from "../component/TeleBox01";
 import TeleBox02 from "../component/TeleBox02";
 
 const RepeatPracticePage = () => {
-    const [toDoInput, setToDoInput] = useState('');
+    // const [toDoInput, setToDoInput] = useState('');
+    // const [toDoList, setToDoList] = useState([]);
+
+    // const changeInputValue = (event) => {
+    //     setToDoInput(event.target.value); // input의 값을 state에 저장
+    // }
+
+    // const handleKeyDown = (event) => {
+    //     if (event.key === 'Enter') {
+    //         setToDoList(preList => [...preList, toDoInput]);
+    //         setToDoInput('');
+    //     }
+    // }
+    
+
+    const [toDoValue, setToDoValue] = useState('');
     const [toDoList, setToDoList] = useState([]);
 
-    const changeInputValue = (event) => {
-        setToDoInput(event.target.value); // input의 값을 state에 저장
+    const ChangeValue = (event) => {
+        setToDoValue(event.target.value);
     }
 
-    const handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
-            setToDoList(preList => [...preList, toDoInput]);
-            setToDoInput('');
+    const AddToDoList = (event) => {
+        if(event.key === "Enter"){
+            setToDoList(preList => [...preList, toDoValue]);
+            setToDoValue('');
         }
     }
-    
+
     return (
         <div className="rp-page-container">
             <section className="day-section day02">
@@ -36,12 +51,14 @@ const RepeatPracticePage = () => {
                     {/* 1. 레이아웃 만들기(인풋, ul) */}
                     {/* 2. 인풋 : value 값 노출, enter 이벤트 => useState */}
                     {/* 3. 투두리스트 저장할 배열 useState 저장 */}
-                    {/* 4. 인풋 엔터 클릭 시 저장된 value를 배열에 넣고 새로운 배열로 map해서 li로 노출하기 */}
+                    {/* 4. 인풋 엔터 클릭 시 저장된 value를 배열에 넣고 새로운 배열로 map해서 li로 노출하기(모르게따...) */}
                     {/* 5. 엔터 클릭 시 인풋 value 초기화 */}
                     <div className='toDo-content-wrap'>
-                        <input type="text" />
+                        <input type="text" value={toDoValue} onChange={ChangeValue} onKeyDown={AddToDoList}/>
                         <ul className="list-wrap">
-
+                            {toDoList.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -69,14 +86,14 @@ const RepeatPracticePage = () => {
                     {/* 3. value를 ul 안에 li로 넣어 노출하도록 한다. */}
 
                     {/* 알게된점 : useState 사용, 인풋 값이 보이려면 무조건 온체인지, 엔터 누르면 리스트 나오게 할 때 배열에 넣고 추가해주기!*/}
-                    <div className='toDo-content-wrap'>
+                    {/* <div className='toDo-content-wrap'>
                         <input type="text" value={toDoInput} onChange={changeInputValue} onKeyDown={handleKeyDown}/>
                         <ul className="list-wrap">
                             {toDoList.map((item, index) => (
                                 <li key={index}>{item}</li> // 리스트 아이템 렌더링
                             ))}
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </div>
