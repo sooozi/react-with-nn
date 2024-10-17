@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TeleBox01 from "../component/TeleBox01";
+import TeleBox02 from "../component/TeleBox02";
 
 const RepeatPracticePage = () => {
     const [toDoInput, setToDoInput] = useState('');
@@ -20,7 +21,34 @@ const RepeatPracticePage = () => {
         <div className="rp-page-container">
             <section className="day-section day02">
                 <h2>Day 2</h2>
+                <div className="mission-content mission-01 tele-box-mission">
+                    <h3>텔레토비 박스</h3>
+                    {/* 1. 박스 컴포넌트를 만들고 props로 이름, 컬러명을 넣고 보더 컬러도 넣을 수 있게 한다. */}
+                    <div className='tele-box-wrap'>
+                        <TeleBox02 name="보라돌이" color="보라색" border="purple"></TeleBox02>
+                        <TeleBox02 name="뚜비" color="초록색" border="green"></TeleBox02>
+                        <TeleBox02 name="나나" color="노란색" border="yellow"></TeleBox02>
+                        <TeleBox02 name="뽀" color="빨강색" border="red"></TeleBox02>
+                    </div>
+                </div>
+                <div className="mission-content mission-02">
+                    <h3>간단 투두리스트</h3>
+                    {/* 1. 레이아웃 만들기(인풋, ul) */}
+                    {/* 2. 인풋 : value 값 노출, enter 이벤트 => useState */}
+                    {/* 3. 투두리스트 저장할 배열 useState 저장 */}
+                    {/* 4. 인풋 엔터 클릭 시 저장된 value를 배열에 넣고 새로운 배열로 map해서 li로 노출하기 */}
+                    {/* 5. 엔터 클릭 시 인풋 value 초기화 */}
+                    <div className='toDo-content-wrap'>
+                        <input type="text" />
+                        <ul className="list-wrap">
+
+                        </ul>
+                    </div>
+                </div>
             </section>
+
+
+
             <section className="day-section day01">
                 <h2>Day 1</h2>
                 <div className="mission-content mission-01 tele-box-mission">
