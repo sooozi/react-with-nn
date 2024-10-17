@@ -35,6 +35,26 @@ const RepeatPracticePage = () => {
     return (
         <div className="rp-page-container">
             <section className="day-section day02">
+                <h2>Day 3</h2>
+                <div className="mission-content mission-01 tele-box-mission">
+                    <h3>텔레토비 박스</h3>
+
+                    <div className='tele-box-wrap'>
+
+                    </div>
+                </div>
+                <div className="mission-content mission-02">
+                    <h3>간단 투두리스트</h3>
+                    
+                    <div className='toDo-content-wrap'>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section className="day-section day02">
                 <h2>Day 2</h2>
                 <div className="mission-content mission-01 tele-box-mission">
                     <h3>텔레토비 박스</h3>
