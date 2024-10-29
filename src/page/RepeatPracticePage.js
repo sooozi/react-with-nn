@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TeleBox01 from "../component/TeleBox01";
 import TeleBox02 from "../component/TeleBox02";
-import TeleBox04 from "../component/TeleBox04";
 
 const RepeatPracticePage = () => {
     // const [toDoInput, setToDoInput] = useState('');
@@ -19,56 +18,45 @@ const RepeatPracticePage = () => {
     // }
     
 
-    // const [toDoValue, setToDoValue] = useState('');
-    // const [toDoList, setToDoList] = useState([]);
-
-    // const ChangeValue = (event) => {
-    //     setToDoValue(event.target.value);
-    // }
-
-    // const AddToDoList = (event) => {
-    //     if(event.key === "Enter"){
-    //         setToDoList(preList => [...preList, toDoValue]);
-    //         setToDoValue('');
-    //     }
-    // }
 
 
-    // const [inputValue, setInputValue] = useState('');
-    // const [toDoList, setToDoList] = useState([]);
-
-    // const ChangeValue = (event) => {
-    //     setInputValue(event.target.value);
-    // }
-
-    // const KeyDownEnter = (event) => {
-    //     if(event.key  === "Enter") {
-    //         setToDoList(preList => [...preList, inputValue]);
-    //         setInputValue('');
-    //     }
-    // }
 
 
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue]  = useState('');
     const [todoList, setTodoList] = useState([]);
 
-    const targetValue = (event) => {
+    const handleChange = (event) => {
         setInputValue(event.target.value);
     }
 
-    const eventEnter = (event) => {
-        if(event.key === 'Enter')  {
-            console.log(inputValue);
-            setTodoList(preList => [...preList,  inputValue]);
+    const handleEnter = (event) => {
+        if(event.key  === 'Enter')  {
+            setTodoList(preList => [...preList, inputValue]);
             setInputValue('');
         }
     }
-
 
     
     return (
         <div className="rp-page-container">
             <section className="day-section day04">
+                <h2>Day 3</h2>
+                <div className="mission-content mission-01 tele-box-mission">
+                    <h3>텔레토비 박스 (졸업👩‍🎓)</h3>
+                </div>
+                <div className="mission-content mission-02">
+                    <h3>간단 투두리스트</h3>
+                    <input type="text" value={inputValue} onChange={handleChange} onKeyDown={handleEnter}/>
+                    <div className='toDo-content-wrap'>
+                        {todoList.map((item, index) => <li key={index}>{item}</li>)}
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            {/* <section className="day-section day04">
                 <h2>Day 3</h2>
                 <div className="mission-content mission-01 tele-box-mission">
                     <h3>텔레토비 박스</h3>
@@ -87,12 +75,7 @@ const RepeatPracticePage = () => {
                         {todoList.map((item, index) => <li key={index}>{item}</li>)}
                     </div>
                 </div>
-            </section>
-
-
-
-
-
+            </section> */}
 
             {/* <section className="day-section day03">
                 <h2>Day 3</h2>
